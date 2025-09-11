@@ -1,0 +1,456 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+}
+
+header {
+  top: -900px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.dropdown-escola {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 15px;
+  padding: 10px 0;
+  display: none;
+}
+
+.dropdown-menu a{
+  display: block;
+  width: 145px;
+  padding: 12px 20px;
+  margin: 5px 0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.img-leonardo {
+  border-radius: 30px;
+  width: 60px;
+  height: auto;
+  margin-left: 50px;
+  box-shadow: 1px 2px 9px #00000072;
+}
+
+.img-leonardo.dv{
+  transform: rotate(-7deg);
+  box-shadow: 1px 2px 9px #00000072;
+}
+
+.btn-trocar-escola {
+  background: linear-gradient(90deg, rgb(6, 99, 6), rgb(12, 12, 108));
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.escolher-curso {
+  position: absolute;
+  max-width: 600px;
+  margin: 360px 460px 0 460px;
+  background: #f0f0f0;
+  border-radius: 15px;
+  border: 1px solid #dfdede;
+  z-index: 2;
+}
+
+.escolher-curso-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 15px 15px 0;
+}
+
+.escolha {
+  position: relative;
+  margin-top: 5px;
+  padding: 0 20px;
+  font-size: 50px;
+}
+
+.typed-cursor {
+  display: none;
+}
+
+.btn-escolher-curso {
+  background: linear-gradient(90deg, rgb(6, 99, 6), rgb(12, 12, 108));
+  border: none;
+  margin-top: 40px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.escolher-curso {
+  position: absolute;
+  width: 100%;
+  margin: 350px 460px 0 460px;
+  background: #f0f0f0;
+  border-radius: 15px;
+  border: 1px solid #dfdede;
+}
+
+.escolha {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.typed-cursor {
+  display: none;
+}
+
+.btn-escolher-curso {
+  background: linear-gradient(90deg, rgb(6, 99, 6), rgb(12, 12, 108));
+  border: none;
+  margin-top: 10px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.swiper {
+  left: 30px;
+  width: 100%;
+  max-width: 1300px;
+  height: 500px;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide {
+  right: 40px;
+  width: 280px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  transition: transform 0.4s ease;
+  position: relative;
+}
+
+.swiper-slide p {
+    margin-top: -20px;
+    margin-left: 10px;
+    text-shadow: 0 12px 30px rgba(146, 146, 146, 0.66);
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.swiper-slide:hover {
+  box-shadow: 0 12px 30px rgba(84, 84, 84, 0.66);
+}
+
+.formacao {
+  background: linear-gradient(to right, #3eaccb, #d7d6d7);
+}
+
+.tds {
+  background: linear-gradient(to right, #1114c0, #9904bf);
+}
+
+.enfermagem {
+  background: linear-gradient(to right, #2bb72f, #c0ea05);
+}
+
+.swiper-slide-active {
+  transform: scale(1.1);
+}
+
+.adm {
+  background: linear-gradient(to right, rgb(194, 194, 11), #e8ef08);
+}
+
+.agro {
+  background: linear-gradient(to right, #574230, #fcad58);
+}
+
+.btn-curso {
+  position: absolute;
+  margin-top: -100px;
+  margin-left: 10px;
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-size: 16px;
+  color: white;
+  border: 2px solid #ffffff;
+  box-shadow: 3px 4px 8px rgba(255, 255, 255, 0.263);
+}
+
+.TDS {
+  background: linear-gradient(to right, #1114c0, #9904bf);
+}
+
+.FORMACAO {
+  background: linear-gradient(to right, #3eaccb, #d7d6d7);
+}
+
+.ENFERMAGEM {
+  background: linear-gradient(to right, #2bb72f, #c0ea05);
+}
+
+.ADM {
+  background: linear-gradient(to right, rgb(194, 194, 11), #e8ef08);
+  margin-top: -135px;
+  margin-left: -15px;
+}
+
+.AGRO {
+  background: linear-gradient(to right, #574230, #fcad58);
+  margin-top: -135px;
+  margin-left: -15px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  margin: 0 30px;
+  color: #000000;
+}
+
+.swiper-button-next,
+.swiper-button-prev.dv {
+  margin: 0 150px;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  padding: 20px 0;
+  overflow: hidden;
+  position: relative;
+  margin-top: 120px;
+}
+
+.carrossel {
+  display: flex;
+  width: max-content;
+  gap: 30px;
+  animation: deslizar 20s linear infinite;
+}
+
+.carrossel a {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 40px;
+  white-space: nowrap;
+}
+
+.carrossel a:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+
+@keyframes deslizar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+.card {
+    width: 90vh;
+    height: 50vw;
+    max-width: none;
+    perspective: 1500px;
+    transform: scale(1);
+    transition: transform 0.4s ease-out;
+}
+
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  background: linear-gradient(to right, #1114c0, #9904bf);
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 18px 10px;
+  box-sizing: border-box;
+  overflow: auto;
+  max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+  color: white;
+  text-shadow: 0 12px 30px rgba(146, 146, 146, 0.66);
+}
+
+p {
+  color: white;
+  font-size: 15px;
+  text-shadow: 0 12px 30px rgba(146, 146, 146, 0.66);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 0;
+}
+
+input, textarea {
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1.2px solid #d1d5db;
+  font-size: 15px;
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px 0 rgba(124,58,237,0.05);
+  outline: none;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid #7c3aed;
+  box-shadow: 0 0 0 2px #a78bfa44;
+}
+
+.input-file {
+    padding-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.input-label {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin-bottom: 2px;
+  letter-spacing: 0.01em;
+  }
+
+.nextBtn {
+  padding: 14px 0;
+  background: linear-gradient(90deg, #7c3aed 0%, #4c1d95 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px 0 rgba(124,58,237,0.10);
+  letter-spacing: 0.04em;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+.nextBtn:hover {
+  background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+  box-shadow: 0 4px 16px 0 rgba(124,58,237,0.18);
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.close-btn:hover {
+  opacity: 1;
+}
+
+#form-titulo {
+    color: white;
+    text-shadow: 0 12px 30px rgba(146, 146, 146, 0.66);
+}
+
+label {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin-bottom: 2px;
+  letter-spacing: 0.01em;
+}
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+  font-family: inherit;
+}

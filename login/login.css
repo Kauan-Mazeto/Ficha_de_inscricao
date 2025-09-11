@@ -1,0 +1,835 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+main {
+    position: relative;
+    left: -400px;
+}
+
+#cadernoEspiral {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    top: 10px;
+
+    & .conexoes {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: linear-gradient(to top left, #222, #555);
+        box-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.6), 
+            inset -1px -1px 2px rgba(255, 255, 255, 1.4);
+        position: relative;
+    }
+}
+
+#cadernoData {
+    position: relative;
+    display: inline-flex;
+    font-size: 32px;
+    top: 70px;
+    left: 50px;
+    
+    & input {
+        width: 40px;
+        border: transparent;
+        border-bottom: 2px solid black;
+        text-align: center;
+        font-size: 18px;
+        font-family: "Kalam", cursive;
+    }
+
+    & input:focus {
+        outline: none;
+    }
+}
+
+#cadernoSemana {
+    position: relative;
+    display: inline-flex;
+    gap: 20px;
+    top: 70px;
+    left: 160px;
+
+    & .cadernoSemanaDia {
+        position: relative;
+        width: 30px;
+        font-size: 24px;
+        font-family: 'Courier New', Courier, monospace;
+        border: 2px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+
+        & .spanDias {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+        }   
+    }
+
+    & .cadernoSemanaDia .check {
+        position: absolute;
+        top: -10px;
+        left: -15px;
+        font-size: 64px;
+        color: green;
+        display: none;
+    }
+
+    & .select {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+#container {
+    background-color: white;
+    width: 700px;
+    height: 850px;
+    border: 8px solid black;
+    border-top: transparent;
+    padding-left: 10px;
+    position: relative;
+}
+
+#cadernoPrincipal {
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cadernoLinhaMarcacao{
+    height: 2px;
+    width: calc(100% - 10px);
+    background-color: black;
+    margin: 30px 0px;
+}
+
+#cadernoLogo {
+
+    & #cadernoLogoSpiral {
+        width: 101px;
+        height: 101px;
+        position: relative;
+        top: -30px;
+        left: 5px;
+    }
+}
+
+#telaLogin {
+    position: absolute;
+    width: 100%;
+
+    & #textoSuperior {
+        position: relative;
+        top: 20px;
+        left: -20px;
+        justify-content: center;
+        display: flex; 
+        font-size: 64px;
+        font-family: "Story Script", sans-serif;
+        font-weight: 700;
+        
+    }
+
+    & label {
+        display: block;
+        position: relative;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 32px;
+    }
+
+    & #labelEmail {
+        top: 30px;
+    }
+
+    & #labelSenha {
+        top: 40px;
+    }
+    
+    & #iconeHidden {
+        position: relative;
+        top: -10px;
+        left: 470px;
+        cursor: pointer;
+        font-size: 1px;
+
+        & img {
+            position: relative;
+            top: -3px;
+            left: 5px;
+            width: 35px;
+            height: 35px;
+        }
+
+        & img:hover {
+            transform: scale(1.1);
+        }
+    }
+
+
+    & #emailInput {
+        display: block;
+        position: relative;
+        left: 120px;
+        top: 20px;
+        width: 400px;
+        height: 50px;
+        font-size: 24px;
+        font-family: 'Kalam', cursive;
+        font-weight: 500;
+        padding-left: 10px;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+
+    & #senhaInput {
+        display: block;
+        position: relative;
+        left: 120px;
+        top: 30px;
+        width: 400px;
+        height: 50px;
+        font-size: 24px;
+        font-family: 'Kalam', cursive;
+        font-weight: 500;
+        padding-left: 10px;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+
+    & #senhaReset {
+        position: relative;
+        left: 350px;
+        top: 40px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        font-weight: 800;
+        color: blue;
+        cursor: pointer;
+
+        & #btnReset {
+            position: relative;
+            display: inline-flex;
+            padding: 10px;
+            border-radius: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #3982b8;
+            font-weight: bold
+        }
+    }
+
+    & #termosInput {
+        display: inline-flex;
+        position: relative;
+        display: flex;
+        align-items: center;
+        top: 70px;
+        gap: 8px;
+
+        & #inputTermosCheck {
+            transform: scale(2.5);
+            margin-left: 130px;  
+        }
+
+        & #tst {
+            position: relative;
+            font-size: 16px;
+            font-family: "Titillium Web", sans-serif;
+
+            & a {
+                position: relative;
+                left: 10px;
+                color: black;
+                font-weight: 500;
+            }
+        }
+    }
+
+    & #botaoLogin {
+        position: relative;
+        font-family: "Titillium Web", sans-serif;
+        left: 120px;
+        top: 70px;
+        width: 400px;
+        height: 50px;
+        font-size: 32px;
+        border-radius: 10px;
+        border: 2px solid green;
+        background-color: green;
+        color: white;
+    }
+
+    & #botaoLogin:hover {
+        transition: 0.4s ease-out;
+        background-color: black;
+        border-color: black;
+    }
+
+    & #spanEmail {
+        font-size: 18px;
+        font-family: "Titillium Web", sans-serif;
+        position: relative;
+        color: red;
+        top: 35px;
+        left: 140px;
+        display: none;
+    }
+
+    & #spanSenha {
+        font-size: 18px;
+        font-family: "Titillium Web", sans-serif;
+        position: relative;
+        color: red;
+        top: 50px;
+        left: 140px;
+        display: none;
+    }
+}
+
+
+#formLogin .neu-input {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#top-marg {
+    margin-top: 35px;
+}
+
+#top-top-marg {
+    margin-top: 25px;
+}
+
+#formLogin .neu-input input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#formLogin .neu-input label {
+    position: absolute;
+    left: 140px;    
+    top: 30%;
+    transform: translateY(0);
+    color: black;
+    font-size: 24px;
+    font-weight: 400;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+#formLogin .neu-input input:focus ~ label,
+#formLogin .neu-input input:valid ~ label {
+    top: 8px;
+    font-size: 24px;
+    color: black    ;
+    transform: translateY(-120%);
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+#container-geral {
+    display: flex;
+    gap: 50px;
+    position: relative;
+    left: -100px;
+    top: -100px;
+}
+
+
+
+
+.lapis-container {
+	position: relative;
+	transform: scale(2);
+	cursor: pointer;
+
+	& .lapis {
+		position: relative;
+		width: 16px;
+		height: 250px;
+		border-radius: 8px 8px 0 0;
+		overflow: hidden;
+
+		& .madeira {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: 
+                repeating-linear-gradient(90deg, transparent 0%, rgba(139 , 69 , 19 , 0.1) 1px, transparent 2px),
+				repeating-linear-gradient(0deg, transparent 0%, rgba(139 , 69 , 19 , 0.05) 0.5px, transparent 1px);
+			pointer-events: none;
+		}
+
+		& .pencil-text, & .marca-lapis, & .numero-lapis, & .codigo-de-barras, & .brilho-lapis, & .sombra-lapis {
+			position: absolute;
+			z-index: 2;
+		}
+	}
+
+	&.cor-padrao .lapis {
+		background: linear-gradient(to right,
+			#f4e4a6 0%,
+			#e8d078 15%,
+			#dcc04a 35%,
+			#d4b73a 50%,
+			#dcc04a 65%,
+			#e8d078 85%,
+			#f4e4a6 100%
+		);
+	}
+
+	&.cor-azul .lapis {
+		background: linear-gradient(to right,
+			#a6c8f4 0%,
+			#78aee8 15%,
+			#4aa0dc 35%,
+			#3ab3d4 50%,
+			#4aa0dc 65%,
+			#78aee8 85%,
+			#a6c8f4 100%
+		);
+	}
+
+	&.cor-vermelha .lapis {
+		background: linear-gradient(to right,
+			#f4a6a6 0%,
+			#e87878 15%,
+			#dc4a4a 35%,
+			#d43a3a 50%,
+			#dc4a4a 65%,
+			#e87878 85%,
+			#f4a6a6 100%
+		);
+	}
+
+	&.cor-verde .lapis {
+		background: linear-gradient(to right,
+			#a6f4a6 0%,
+			#78e878 15%,
+			#4adc4a 35%,
+			#3ad43a 50%,
+			#4adc4a 65%,
+			#78e878 85%,
+			#a6f4a6 100%
+		);
+	}
+
+	&.cor-roxo .lapis {
+		background: linear-gradient(to right,
+			#cfa6f4 0%,
+			#aa78e8 15%,
+			#874adc 35%,
+			#7a3ad4 50%,
+			#874adc 65%,
+			#aa78e8 85%,
+			#cfa6f4 100%
+		);
+	}
+
+	&.cor-ciano .lapis {
+		background: linear-gradient(to right,
+			#a6f4f4 0%,
+			#78e8e8 15%,
+			#4adcdc 35%,
+			#3ad4d4 50%,
+			#4adcdc 65%,
+			#78e8e8 85%,
+			#a6f4f4 100%
+		);
+	}
+}
+
+.lapis::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: 
+		repeating-linear-gradient(90deg,
+			transparent 0px,
+			rgba(139, 69, 19, 0.1) 1px,
+			transparent 2px
+		),
+		repeating-linear-gradient(0deg,
+			transparent 0px,
+			rgba(139, 69, 19, 0.05) 0.5px,
+			transparent 1px
+		);
+	pointer-events: none;
+}
+
+.ponta-lapis {
+	position: absolute;
+	top: -20px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 25px solid #dcc04a;
+	z-index: 1;
+}
+
+.grafite {
+	position: absolute;
+	top: -20px;
+	left: 6px;
+	width: 0;
+	height: 0;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-bottom: 8px solid #2c2c2c;
+	z-index: 3;
+}
+
+.grafite::after {
+	content: '';
+	position: absolute;
+	bottom: -3px;
+	left: -1px;
+	width: 0;
+	height: 0;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-bottom: 2px solid #000;
+}
+
+.madeira {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: 
+		linear-gradient(90deg, 
+			transparent 0%, 
+			rgba(160, 82, 45, 0.1) 25%, 
+			transparent 50%, 
+			rgba(160, 82, 45, 0.1) 75%, 
+			transparent 100%
+		);
+	z-index: 1;
+}
+
+.texto-lapis {
+	position: absolute;
+	top: 45px;
+	left: 50%;
+	transform: translateX(-50%) rotate(90deg);
+	font-size: 7px;
+	font-weight: bold;
+	color: #8B4513;
+	letter-spacing: 2px;
+}
+
+.marca-lapis {
+	position: absolute;
+	top: 140px;
+	left: 50%;
+	transform: translateX(-50%) rotate(90deg);
+	font-size: 6px;
+	font-weight: normal;
+	color: #654321;
+	z-index: 2;
+}
+
+.numero-lapis {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%) rotate(90deg);
+	font-size: 8px;
+	font-weight: bold;
+	color: #8B4513;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+	z-index: 2;
+}
+
+.codigo-de-barras {
+	position: absolute;
+	left: 3px;
+	bottom: 10px;
+	width: 10px;
+	height: 25px;
+	background: repeating-linear-gradient(0deg,
+		#000 0px,
+		#000 0.5px,
+		transparent 0.5px,
+		transparent 1px,
+		#000 1px,
+		#000 1.2px,
+		transparent 1.2px,
+		transparent 2px,
+		#000 2px,
+		#000 2.3px,
+		transparent 2.3px,
+		transparent 3px
+	);
+	opacity: 0.6;
+	z-index: 2;
+}
+
+.ferrule {
+	position: absolute;
+	bottom: -28px;
+	left: -1px;
+	width: 18px;
+	height: 28px;
+	background: linear-gradient(to right,
+		#e8e8e8 0%,
+		#d4d4d4 15%,
+		#c0c0c0 25%,
+		#b8b8b8 35%,
+		#a8a8a8 50%,
+		#b8b8b8 65%,
+		#c0c0c0 75%,
+		#d4d4d4 85%,
+		#e8e8e8 100%
+	);
+	border-radius: 2px;
+	z-index: 2;
+}
+
+.ferrule::before {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 3px;
+	right: 3px;
+	bottom: 2px;
+	background: repeating-linear-gradient(90deg,
+		rgba(100,100,100,0.3) 0px,
+		rgba(100,100,100,0.3) 0.5px,
+		transparent 0.5px,
+		transparent 2px
+	);
+}
+
+.ferrule::after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 2px;
+	width: 14px;
+	height: 2px;
+	background: linear-gradient(to bottom,
+		rgba(255,255,255,0.8) 0%,
+		rgba(255,255,255,0.4) 50%,
+		transparent 100%
+	);
+	border-radius: 1px;
+}
+
+.borracha {
+	position: absolute;
+	bottom: -38px;
+	left: 1px;
+	width: 14px;
+	height: 12px;
+	background: linear-gradient(to right,
+		#ff8fa3 0%,
+		#ff7a91 25%,
+		#e85a73 50%,
+		#d44965 75%,
+		#c23957 100%
+	);
+	border-radius: 2px;
+	z-index: 3;
+}
+
+.borracha::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: 
+		radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 0.3px, transparent 0.3px),
+		radial-gradient(circle at 6px 4px, rgba(255,255,255,0.2) 0.2px, transparent 0.2px),
+		radial-gradient(circle at 3px 7px, rgba(255,255,255,0.2) 0.3px, transparent 0.3px);
+	background-size: 10px 10px;
+}
+
+.borracha::after {
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 4px;
+	height: 2px;
+	background: linear-gradient(135deg,
+		rgba(255,255,255,0.6) 0%,
+		rgba(255,255,255,0.3) 50%,
+		transparent 100%
+	);
+	border-radius: 1px;
+}
+
+.brilho-lapis {
+	position: absolute;
+	left: 1px;
+	top: 20px;
+	bottom: 20px;
+	width: 3px;
+	border-radius: 2px;
+	z-index: 3;
+	background: linear-gradient(to bottom,
+		transparent 0%,
+		rgba(255,255,255,0.6) 20%,
+		rgba(255,255,255,0.8) 40%,
+		rgba(255,255,255,0.6) 60%,
+		transparent 100%
+	);
+}
+
+.sombra-lapis {
+	position: absolute;
+	right: 1px;
+	top: 20px;
+	bottom: 20px;
+	width: 3px;
+	border-radius: 2px;
+	background: linear-gradient(to bottom,
+		transparent 0%,
+		rgba(139,69,19,0.3) 20%,
+		rgba(139,69,19,0.4) 50%,
+		rgba(139,69,19,0.3) 80%,
+		transparent 100%
+	);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scene {
+	position: relative;
+	top: 350px;
+	left: -500px;
+	width: 500px;
+  	height: 140px;
+	font-family: "Titillium Web", sans-serif;
+}
+
+.borracha-borracha {
+  	position: relative;
+	cursor: pointer;
+  	width: 100%;
+  	height: 100%;
+  	border-radius: 28px;
+  	background:
+  		linear-gradient(to right,
+  			transparent 65%, #ffffff 65% 68%,
+  			transparent 68%),
+  		linear-gradient(to right,
+  			#ef7b63 0 65%,
+  			#6f86c9 68% 100%);
+}
+
+
+.linha-branca {
+  	position: absolute;
+  	left: 2%;
+  	right: 65%;
+  	bottom: 12%;
+  	height: 8%;
+  	border-radius: 14px;
+  	background: linear-gradient(to bottom, rgba(255, 255, 255, .95), rgba(255, 255, 255, .7));
+}
+
+.print {
+  	position: absolute;
+  	padding: 22px 36px;
+  	font-weight: 700;
+  	letter-spacing: 0.5px;
+}
+
+.marca {
+  	color: #1a1a1a;
+  	line-height: 1.10;
+}
+
+.marca .grande {
+  	font-size: 24px;
+  	margin-bottom: 2px;
+}
+
+.marca .pequeno {
+  	font-size: 14px;
+  	font-weight: 600;
+  	margin-bottom: 8px;
+}
+
+.marca .codigo {
+  	width: 80px;
+  	height: 16px;
+	border-radius: 1px;
+	margin-bottom: 3px;
+  	background:
+  		repeating-linear-gradient(to right,
+  			#111 0 1.5px,
+  			transparent 1.5px 2.5px);
+}
+
+  .marca .numero {
+  	font-size: 8px;
+  	color: #333;
+  	font-weight: 600;
+  	letter-spacing: 0.8px;
+}

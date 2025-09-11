@@ -1,0 +1,266 @@
+/* Estilos Gerais e Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(#ffffff, #c4c4c4);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Estilos da Barra Lateral */
+.sidebar {
+    width: 250px;
+    background-color: #5b5b5b;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.TDS {
+    background: linear-gradient(to right, #1114c0, #9904bf);
+}
+
+.ENF {
+    background: linear-gradient(to right, #2bb72f, #c0ea05);
+}
+
+.FORMACAO {
+    background: linear-gradient(to right, #3eaccb, #d7d6d7);
+}
+
+.ADM {
+    background: linear-gradient(to right, rgb(166, 166, 12), #e8ef08);
+}
+
+.AGRO {
+    background: linear-gradient(to right, #574230, #fcad58);
+}
+
+.sidebar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #777;
+}
+
+.sidebar-nav {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin-bottom: 15px;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 10px 15px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav .active a {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.sidebar-nav .logout {
+    margin-top: auto;
+}
+
+/* Estilos do Conteúdo Principal */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.main-header {
+    margin-bottom: 30px;
+    color: black;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px; /* antes era 280px */
+    height: 180px; /* opcional: aumenta um pouco a altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.summary-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.data-table-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-table th, .data-table td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: #f6f6f6;
+    color: #555;
+    font-weight: bold;
+}
+
+.data-table tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos do Modal Pop-up */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.save-btn {
+    background-color: #5b5b5b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.inscricao-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.inscricao-table th,
+.inscricao-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.inscricao-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.inscricao-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.inscricao-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.inscricao-table input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+.inscricao-table input[type="radio"] {
+    width: auto;
+}

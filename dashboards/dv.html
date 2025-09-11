@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/img-dv.jpg">
+    <title>Dois VIzinhos - Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="../img/img-dv.jpg" alt="Imagem do colégio dois vizinhos" class="img-leonardo dv">
+        <div class="dropdown-escola botoes">
+            <button class="btn-trocar-escola">Trocar de Escola</button>
+            <div id="opcoes-escola" class="dropdown-menu">
+                <a href="leonardo.html">Leonardo</a>
+                <a href="">Raul Seixas</a>
+                <a href="">Petrópolis</a>
+                <a href="">São José</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="escolher-curso" id="destaque-curso">
+        <h1 id="typing" class="escolha"></h1>
+        <div class="escolher-curso-div">
+            <button class="btn-escolher-curso">Escolha o Curso</button>
+        </div>
+    </section>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide adm">
+                <div>
+                    <button class="btn-curso ADM">Dois Vizinhos</button>
+                    <p>Administração</p>
+                </div>
+            </div>
+            <div class="swiper-slide agro">
+                <div>
+                    <button class="btn-curso AGRO">Dois Vizinhos</button>
+                    <p>Agro Negócios</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next dv"></div>
+        <div class="swiper-button-prev dv"></div>
+    </div>
+
+    <footer>
+      <div class="carrossel">
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@administracao.dv</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@colegiodoisvizinhos</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@administracao.dv</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@colegiodoisvizinhos</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@administracao.dv</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@colegiodoisvizinhos</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@administracao.dv</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@colegiodoisvizinhos</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@administracao.dv</a>
+        <a href="https://www.instagram.com/colegiodoisvizinhos1?igsh=eWdxOGsxejN5dXR3" target="_blank">@colegiodoisvizinhos</a>
+      </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+    
+    <div class="modal-overlay" id="modal">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <span class="close-btn">&times;</span>
+                    <h2 id="form-titulo"></h2>
+                    <form>
+                        <label for="curso">Curso de Interesse</label>
+                        <input type="text" id="curso-input">
+                        <label for="nome">Nome</label>
+                        <input type="text" required id="nome">
+                        <label for="email">Email</label>
+                        <input type="email" required id="email">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" required id="telefone">
+                        <label for="data">Data de Nascimento</label>
+                        <input type="date" required id="data">
+                        <label for="rg">RG</label>
+                        <input type="text" id="rg" name="rg" maxlength="12" required>
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" maxlength="14" required>
+                        <button type="button" class="nextBtn" aria-required="true">Próximo</button>
+                    </form>
+                </div>
+                <div class="card-face card-back">
+                    <span class="close-btn" >&times;</span>
+                    <h2>Informações Adicionais</h2>
+                    <form>
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" required>
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" list="lista-cidades" required autocomplete="on">
+                        <datalist id="lista-cidades">
+                            <option value="Dois Vizinhos">
+                            <option value="Francisco Beltrão">
+                            <option value="Pato Branco">
+                            <option value="Maringá">
+                            <option value="Curitiba">
+                            <option value="Cascavel">
+                            <option value="Foz do Iguaçu">
+                            <option value="Londrina">
+                            <option value="Toledo">
+                            <option value="Umuarama">
+                        </datalist>
+                        <label for="estado">UF</label>
+                        <input type="text" id="estado" maxlength="2" required>
+                            <label style="display:flex;align-items:flex-start;gap:8px;margin:8px 0;">
+                            <input type="checkbox" id="Declaro" required style="margin-top:4px;">
+                            <span>Declaro verdadeiras as informações acima e estar ciente que, em caso de classificação para o curso e efetivação de matrícula, o não comparecimento nas aulas nos primeiros (05) cinco dias úteis do início do curso implicará na exclusão automática da matrícula sendo necessário participar de novo processo seletivo para ingresso no curso pretendido.</span>
+                        </label>
+                        <label for="assinatura" class="input-label">Assinatura</label>
+                        <input type="file" id="assinatura" class="input-file">
+                        <button type="submit" class="nextBtn">Finalizar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

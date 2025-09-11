@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(#ffffff, #c4c4c4);
+}
+
+
+.navigation-cards {
+    display: flex;
+    margin-top: 70px;
+    gap: 30px;
+    margin-bottom: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block;
+    border-radius: 15px;
+}
+
+.card-link:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.card.tds {
+    background: linear-gradient(to right, #1114c0, #9904bf);
+}
+.card.formacao {
+    background: linear-gradient(to right, #3eaccb, #d7d6d7);
+}
+.card.enfermagem {
+    background: linear-gradient(to right, #2bb72f, #c0ea05);
+}
+.card.adm {
+    background: linear-gradient(to right, rgb(194, 194, 11), #e8ef08);
+}
+.card.agro {
+    background: linear-gradient(to right, #574230, #fcad58);
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 12px 30px rgba(146, 146, 146, 0.66);
+}
+
+.card p {
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 0 12px 30px rgba(146, 146, 146, 0.66);
+}
