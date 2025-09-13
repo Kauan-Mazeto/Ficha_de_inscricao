@@ -1,6 +1,26 @@
 {
+  "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0"
-  }
+  },
+  "name": "front-formulario",
+  "version": "1.0.0",
+  "main": "api.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kauan-Mazeto/Ficha_de_inscricao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kauan-Mazeto/Ficha_de_inscricao/issues"
+  },
+  "homepage": "https://github.com/Kauan-Mazeto/Ficha_de_inscricao#readme",
+  "description": ""
 }

@@ -1,16 +1,14 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
+import express from 'express';
+import cors from 'cors';
 
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Suporte a forms HTML
 
-// Array para armazenar os dados recebidos
 const formularios = [];
 
-// Endpoint para receber e exibir os dados do formulário
 app.post('/api/formulario', (req, res) => {
   formularios.push(req.body);
   res.json({
@@ -19,12 +17,13 @@ app.post('/api/formulario', (req, res) => {
   });
 });
 
-// Endpoint para mostrar todos os dados recebidos
-app.get('/api/formulario', (req, res) => {
-  res.json({
 
+app.get('/api/formulario', (req, res) => {
+
+  const formulariosValidos = formularios.filter(f => f && typeof f === 'object');
+  res.json({
     mensagem: 'Todos os formulários recebidos:',
-    formularios: formularios.filter(f => f && typeof f === 'object')
+    formularios: formulariosValidos
   });
 });
 
