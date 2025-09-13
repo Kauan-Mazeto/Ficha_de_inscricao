@@ -8,11 +8,9 @@
 </head>
 <body>
     <div class="dashboard-container">
-        <nav class="sidebar AGRO">
+        <nav class="sidebar TDS">
             <div class="sidebar-logo">Admin</div>
-            <ul class="sidebar-nav">
-                <li class="active"><a href="#dashboard">Dashboard</a></li>
-            </ul>
+            <div class="dashboard">Dashboard</div>
         </nav>
 
         <main class="main-content">
@@ -52,93 +50,99 @@
     <h2>Ficha de Inscrição</h2>
 
     <!-- Dados do candidato -->
-    <table class="inscricao-table">
-        <tr>
-            <td>NÚMERO DA INSCRIÇÃO:</td>
-            <td colspan="2"><input type="text" name="num_inscricao"></td>
-            <td>CGM</td>
-            <td><input type="text" name="cgm"></td>
-            <td>TURNO:</td>
-            <td>
-                <select name="turno" id="">
-                    <option value="manhã">Manhã</option>
-                    <option value="tarde">Tarde</option>
-                    <option value="noite">Noite</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>NOME DO(A) CANDIDATO(A):</td>
-            <td colspan="6"><input type="text" name="nome" style="width:100%"></td>
-        </tr>
-        <tr>
-            <td>CURSO:</td>
-            <td colspan="6">Agronegócios</td>
-        </tr>
-    </table>
-
-    <!-- Beneficiário -->
-    <h3>Beneficiário</h3>
-    <table class="inscricao-table">
-        <tr>
-            <td>Beneficiário de programas federais de transferência de renda</td>
-            <td><label><input type="radio" name="benef" value="nao"> Não</label></td>
-            <td><label><input type="radio" name="benef" value="sim"> Sim</label> - NIS: <input type="text" name="nis"></td>
-            <td>Valor</td>
-            <td><input type="number" name="valor_benef" min="0" max="10"></td>
-        </tr>
-    </table>
-
-    <!-- Origem Escolar -->
-    <h3>Origem Escolar</h3>
-    <table class="inscricao-table">
-        <tr><td>Ensino Fundamental na Rede Pública ou bolsista integral Rede Particular</td><td>85</td></tr>
-        <tr><td>Parcial Rede Pública (máx. 1 ano Particular ou bolsista parcial)</td><td>80</td></tr>
-        <tr><td>Parcial Rede Pública (mín. 2 até 3 anos Particular)</td><td>75</td></tr>
-        <tr><td>Integral em Rede Particular</td><td>70</td></tr>
-    </table>
-
-    <!-- Médias -->
-    <h3>Médias 9º ano</h3>
-    <table class="inscricao-table">
-        <thead>
+    <form method="post" action="http://localhost:3000/api/formulario">
+        <table class="inscricao-table">
             <tr>
-                <th>DISCIPLINAS</th>
-                <th>6º ANO</th>
-                <th>7º ANO</th>
-                <th>8º ANO</th>
-                <th>9º ANO</th>
-                <th>Média Aritmética</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Língua Portuguesa</td>
-                <td><input type="number" name="lp6" min="0" max="10"></td>
-                <td><input type="number" name="lp7" min="0" max="10"></td>
-                <td><input type="number" name="lp8" min="0" max="10"></td>
-                <td><input type="number" name="lp9" min="0" max="10"></td>
-                <td><input type="number" name="lp_media" readonly></td>
+                <td>NÚMERO DA INSCRIÇÃO:</td>
+                <td colspan="2"><input type="text" name="numero_inscricao" id="num_inscricao" placeholder="Ex: 12345"></td>
+                <td>CGM</td>
+                <td><input type="text" name="cgm" placeholder="Ex: 67890"></td>
+                <td>TURNO:</td>
+                <td>
+                    <select name="turno" placeholder="Selecione o turno">
+                        <option value="manhã">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
+                </td>
             </tr>
             <tr>
-                <td>Matemática</td>
-                <td><input type="number" name="mat6" min="0" max="10"></td>
-                <td><input type="number" name="mat7" min="0" max="10"></td>
-                <td><input type="number" name="mat8" min="0" max="10"></td>
-                <td><input type="number" name="mat9" min="0" max="10"></td>
-                <td><input type="number" name="mat_media" readonly></td>
+                <td>NOME DO(A) CANDIDATO(A):</td>
+                <td colspan="6"><input type="text" name="nome_candidato" style="width:100%" placeholder="Nome completo"></td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+                <td>CURSO:</td>
+                <td colspan="6"><input type="text" name="curso" value="Agronegócio" readonly></td>
+            </tr>
+        </table>
 
-    <!-- Totais -->
-    <p><strong>Média Aritmética das disciplinas – Final – 0-100:</strong> <input type="number" name="media_final"></p>
-    <p><strong>Pontuação Beneficiário + Origem Escolar:</strong> <input type="number" name="pontuacao"></p>
-    <p><strong>Entrevista (quando aplicada) – Valor de 0 a 100:</strong> <input type="number" name="entrevista"></p>
-    <p><strong>TOTAL GERAL DA PONTUAÇÃO:</strong> <input type="number" name="total"></p>
-    <div style="text-align: center; margin-top: 20px;">
-        <button type="button" id="save-btn">Salvar</button>
-    </div>
+        <!-- Beneficiário -->
+        <h3>Beneficiário</h3>
+        <table class="inscricao-table">
+            <tr>
+                <td>Beneficiário de programas federais de transferência de renda</td>
+                <td><label><input type="radio" name="beneficiario" value="nao"> Não</label></td>
+                <td><label><input type="radio" name="beneficiario" value="sim"> Sim</label> - NIS: <input type="text" name="nis" placeholder="NIS"></td>
+                <td>Valor</td>
+                <td><input type="number" name="valor_beneficio" min="0" max="10" placeholder="Valor"></td>
+            </tr>
+        </table>
+
+        <!-- Origem Escolar -->
+        <h3>Origem Escolar</h3>
+        <table class="inscricao-table">
+            <tr><td>Ensino Fundamental na Rede Pública ou bolsista integral Rede Particular</td><td>85</td></tr>
+            <tr><td>Parcial Rede Pública (máx. 1 ano Particular ou bolsista parcial)</td><td>80</td></tr>
+            <tr><td>Parcial Rede Pública (mín. 2 até 3 anos Particular)</td><td>75</td></tr>
+            <tr><td>Integral em Rede Particular</td><td>70</td></tr>
+        </table>
+
+        <!-- Médias -->
+        <h3>Médias 9º ano</h3>
+        <table class="inscricao-table">
+            <thead>
+                <tr>
+                    <th>DISCIPLINAS</th>
+                    <th>6º ANO</th>
+                    <th>7º ANO</th>
+                    <th>8º ANO</th>
+                    <th>9º ANO</th>
+                    <th>Média Aritmética</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Língua Portuguesa</td>
+                    <td><input type="number" name="portugues_6ano" min="0" max="10" placeholder="6º Ano"></td>
+                    <td><input type="number" name="portugues_7ano" min="0" max="10" placeholder="7º Ano"></td>
+                    <td><input type="number" name="portugues_8ano" min="0" max="10" placeholder="8º Ano"></td>
+                    <td><input type="number" name="portugues_9ano" min="0" max="10" placeholder="9º Ano"></td>
+                    <td><input type="number" name="media_portugues" placeholder="Média"></td>
+                </tr>
+                <tr>
+                    <td>Matemática</td>
+                    <td><input type="number" name="matematica_6ano" min="0" max="10" placeholder="6º Ano"></td>
+                    <td><input type="number" name="matematica_7ano" min="0" max="10" placeholder="7º Ano"></td>
+                    <td><input type="number" name="matematica_8ano" min="0" max="10" placeholder="8º Ano"></td>
+                    <td><input type="number" name="matematica_9ano" min="0" max="10" placeholder="9º Ano"></td>
+                    <td><input type="number" name="media_matematica" placeholder="Média"></td> 
+                </tr>
+                <tr>
+                    <td><strong>Média Final (0-100):</strong> <input type="number" name="media_final" placeholder="Média Final"></td>
+                    <td><strong>Pontuação Beneficiário + Origem Escolar:</strong> <input type="number" name="pontuacao_benef_origem" placeholder="Pontuação"></td>
+                    <td><strong>Entrevista (0-100):</strong> <input type="number" name="entrevista" placeholder="Entrevista"></td>
+                    <td colspan="3"><strong>Total Geral:</strong> <input type="number" name="total_geral" placeholder="Total"></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <div class="enviar-tabela">
+                            <button type="submit" id="save-btn" class="save-btn">Salvar</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
 
     </div>
 
