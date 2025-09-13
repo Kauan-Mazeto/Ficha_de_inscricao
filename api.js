@@ -10,7 +10,9 @@ app.use(express.urlencoded({ extended: true })); // Suporte a forms HTML
 const formularios = [];
 
 app.post('/api/formulario', (req, res) => {
+
   formularios.push(req.body);
+  
   res.json({
     mensagem: 'Dados recebidos com sucesso!',
     dadosRecebidos: req.body

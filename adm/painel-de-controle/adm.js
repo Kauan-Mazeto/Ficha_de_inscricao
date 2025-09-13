@@ -77,13 +77,17 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   let form = document.querySelector('form');
+
   form.onsubmit = function(e) {
     e.preventDefault();
+
     let dados = {};
     let formData = new FormData(form);
+
     formData.forEach(function(value, key) {
       dados[key] = value;
     });
+
     fetch('http://localhost:3000/api/formulario', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -94,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
       fecharModal();
       setTimeout(function() {
         alert('200 - Formulário enviado com sucesso!');
-        console.log('Resposta da API:', data);
       }, 300);
     })
     .catch(() => {
