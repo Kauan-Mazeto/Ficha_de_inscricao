@@ -1,4 +1,4 @@
-/* Estilos Gerais e Layout */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,12 +10,26 @@ body {
     background: radial-gradient(#ffffff, #c4c4c4);
 }
 
+.checkBeneficiario {
+    position: relative;
+    top: 15px;
+}
+
+.origem {
+    display: flex;
+    position: relative;
+    left: 320px;
+    top: 10px;
+    width: 100px;
+    height: 20px;
+}
+
+
 .dashboard-container {
     display: flex;
     min-height: 100vh;
 }
 
-/* Estilos da Barra Lateral */
 .sidebar {
     width: 250px;
     background-color: #5b5b5b;
@@ -65,7 +79,6 @@ body {
     background-color: #ffffff;
 }
 
-/* Estilos do Conteúdo Principal */
 .main-content {
     flex-grow: 1;
     padding: 40px;
@@ -148,7 +161,6 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Estilos do Modal Pop-up */
 .modal {
     display: none;
     position: fixed;
@@ -270,4 +282,3 @@ body {
         transform: scale(1.01);
     }
 }
-

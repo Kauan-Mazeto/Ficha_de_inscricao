@@ -1,13 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const ufInput = document.getElementById('estado');
-  if (ufInput) {
-    ufInput.addEventListener('input', function() {
-
-      this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();
-    });
-  }
+  
 
   const cardCount = document.querySelectorAll('.swiper-slide').length;
   const card_meio = Math.floor(cardCount / 2);
@@ -55,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnEscolherCurso.addEventListener('click', () => {
     const activeSlide = document.querySelector('.swiper-slide-active');
-    if (!activeSlide) return;
 
     const cursoNome = activeSlide.querySelector('p').textContent;
     const cardCor = window.getComputedStyle(activeSlide).background;
@@ -91,14 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
-  const rgInput = document.getElementById('rg');
-  const cpfInput = document.getElementById('cpf');
-  if (rgInput) {
-    rgInput.addEventListener('input', function() { formatRG(this); });
-  }
-  if (cpfInput) {
-    cpfInput.addEventListener('input', function() { formatCPF(this); });
-  }
+  
 
   formTraz.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -125,13 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function formatRG(rg) {
    let value = rg.value.replace(/\D/g, '');  
    if (value.length <= 2) {
-       rg.value = value; 
+    rg.value = value; 
+
    } else if (value.length <= 5) {
-       rg.value = value.replace(/^(\d{2})(\d{1,3})$/, '$1.$2'); 
+    rg.value = value.replace(/^(\d{2})(\d{1,3})$/, '$1.$2'); 
+
    } else if (value.length <= 8) {
-       rg.value = value.replace(/^(\d{2})(\d{3})(\d{1,3})$/, '$1.$2.$3'); 
+    rg.value = value.replace(/^(\d{2})(\d{3})(\d{1,3})$/, '$1.$2.$3');
+     
    } else if (value.length <= 9) {
-       rg.value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{1})$/, '$1.$2.$3-$4'); 
+    rg.value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{1})$/, '$1.$2.$3-$4'); 
    }
 }
 
@@ -148,23 +137,36 @@ function formatCPF(cpf) {
    }
 }
 
+const rgInput = document.getElementById('rg');
+const cpfInput = document.getElementById('cpf');
+if (rgInput) {
+  rgInput.addEventListener('input', function() { formatRG(this); });
+}
+if (cpfInput) {
+  cpfInput.addEventListener('input', function() { formatCPF(this); });
+}
+
 const form = document.getElementById("fixaAluno");
-const notificationCard = document.getElementById("notification-card");
+const notificacaoCard = document.getElementById("notification-card");
 
 form.addEventListener("submit", function (event) {
    event.preventDefault();
-   notificationCard.style.display = "block";
+
+   notificacaoCard.style.display = "block";
+
    setTimeout(() => {
-       notificationCard.classList.add('show');
+      notificacaoCard.classList.add('show');
    }, 10);
    setTimeout(() => {
-       notificationCard.classList.remove('show');
+      notificacaoCard.classList.remove('show');
    }, 3000);
+
    form.reset();
 });
 
   function formatoTelefone(telefone) {
     let value = telefone.value.replace(/\D/g, '');
+
     if (value.length === 0) {
       telefone.value = '';
       return;
@@ -191,33 +193,42 @@ form.addEventListener("submit", function (event) {
     input.addEventListener('input', function() { formatoTelefone(this); });
   });
 
-    function mensagem() {
-      let msg = document.getElementById('msg-enviado');
+  function mensagem() {
+    let msg = document.getElementById('msg-enviado');
 
-      if (!msg) {
-        msg = document.createElement('div');
-        msg.id = 'msg-enviado';
-        msg.style.position = 'fixed';
-        msg.style.top = '30px';
-        msg.style.left = '50%';
-        msg.style.transform = 'translateX(-50%)';
-        msg.style.background = '#4caf50';
-        msg.style.color = '#fff';
-        msg.style.padding = '16px 32px';
-        msg.style.borderRadius = '8px';
-        msg.style.fontSize = '18px';
-        msg.style.zIndex = '9999';
-        msg.textContent = 'Formulário enviado com sucesso!';
-        document.body.appendChild(msg);
-      }
-      msg.style.display = 'block';
-      setTimeout(() => { msg.style.display = 'none'; }, 2500);
+    if (!msg) {
+      msg = document.createElement('div');
+      msg.id = 'msg-enviado';
+      msg.style.position = 'fixed';
+      msg.style.top = '30px';
+      msg.style.left = '50%';
+      msg.style.transform = 'translateX(-50%)';
+      msg.style.background = '#4caf50';
+      msg.style.color = '#fff';
+      msg.style.padding = '16px 32px';
+      msg.style.borderRadius = '8px';
+      msg.style.fontSize = '18px';
+      msg.style.zIndex = '9999';
+      msg.textContent = 'Formulário enviado com sucesso!';
+      document.body.appendChild(msg);
     }
+      
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 2500);
+  }
 
-  // Pega todos os forms visíveis
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', function(e) {
       mensagem();
     });
   });
+
+  const ufInput = document.getElementById('estado');
+  if (ufInput) {
+    ufInput.addEventListener('input', function() {
+
+      this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();
+    });
+  }
+
 });

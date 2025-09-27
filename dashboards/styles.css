@@ -257,25 +257,17 @@ footer {
 
 .carrossel {
   display: flex;
-  width: max-content;
-  gap: 30px;
+  margin-top: 10px;
+  gap: 60px;
   animation: deslizar 20s linear infinite;
 }
 
 .carrossel a {
-  font-family: 'Poppins', sans-serif;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
-  color: #000000;
-  margin: 0 40px;
-  white-space: nowrap;
+  color: #333;
+  font-weight: bold;
 }
 
-.carrossel a:hover {
-  transform: scale(1.05);
-  transition: 0.5s ease;
-}
 
 @keyframes deslizar {
   from {
@@ -292,7 +284,6 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -306,6 +297,7 @@ footer {
     width: 90vh;
     height: 50vw;
     max-width: none;
+
     perspective: 1500px;
     transform: scale(1);
     transition: transform 0.4s ease-out;
@@ -341,9 +333,9 @@ footer {
   box-sizing: border-box;
   overflow: auto;
   max-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h2 {
@@ -358,12 +350,12 @@ p {
 }
 
 .card-back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 h2 {
-    margin-bottom: 20px;
-    text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 form {
@@ -384,15 +376,16 @@ input, textarea {
   box-shadow: 0 1px 4px 0 rgba(124,58,237,0.05);
   outline: none;
 }
+
 input:focus, textarea:focus {
   border: 1.5px solid #7c3aed;
   box-shadow: 0 0 0 2px #a78bfa44;
 }
 
 .input-file {
-    padding-bottom: 20px;
-    font-size: 16px;
-    color: #333;
+  padding-bottom: 20px;
+  font-size: 16px;
+  color: #000000;
 }
 
 .input-label {
@@ -405,7 +398,7 @@ input:focus, textarea:focus {
 
 .nextBtn {
   padding: 14px 0;
-  background: linear-gradient(90deg, #7c3aed 0%, #4c1d95 100%);
+  background: gray;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -418,7 +411,6 @@ input:focus, textarea:focus {
   margin-top: 10px;
 }
 .nextBtn:hover {
-  background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
   box-shadow: 0 4px 16px 0 rgba(124,58,237,0.18);
 }
 

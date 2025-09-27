@@ -1,49 +1,61 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" href="img/img-leonardo.jpg">
-  <title>Leonardo da Vinci - Dashboard</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
-  <link rel="stylesheet" href="adm-inicial.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="adm-inicial.css">
+    <title>Document</title>
 </head>
 <body>
-            <section class="navigation-cards">
-                <a href="./painel-de-controle/tds.html" class="card-link">
-                    <div class="card tds">
-                        <h3>Técnico em Desenvolvimento de Sistemas</h3>
-                        <p>CCM Leonardo da Vinci</p>
-                    </div>
-                </a>
-                <a href="./painel-de-controle/formacao.html" class="card-link">
-                    <div class="card formacao">
-                        <h3>Formação de Docentes</h3>
-                        <p>CCM Leonardo da Vinci</p>
-                    </div>
-                </a>
-                <a href="./painel-de-controle/enf.html" class="card-link">
-                    <div class="card enfermagem">
-                        <h3>Técnico em Enfermagem</h3>
-                        <p>CCM Leonardo da Vinci</p>
-                    </div>
-                </a>
-                <a href="./painel-de-controle/administracao.html" class="card-link">
-                    <div class="card adm">
-                        <h3>Adiministração</h3>
-                        <p>Colégio Dois Vizinhos</p>
-                    </div>
-                </a>
-                <a href="./painel-de-controle/agro.html" class="card-link">
-                    <div class="card agro">
-                        <h3>Agronegócios</h3>
-                        <p>Colégio Dois Vizinhos</p>
-                    </div>
-                </a>
-            </section>
-    
-    <script src="adm.js"></script>
+    <div class="carousel">
+
+                <div class="slide active">
+                    <a href="painel-de-controle/tds.html" class="card">
+                        <div class="front">
+                            <span>Técnico em Desenvolvimento de Sistemas</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a href="painel-de-controle/enf.html" class="card">
+                        <div class="front">
+                            <span>Técnico em Enfermagem</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a href="painel-de-controle/formacao.html" class="card">
+                        <div class="front">
+                            <span>Formação de Docentes</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a href="painel-de-controle/adm.html" class="card">
+                        <div class="front ">
+                            <span>Administração</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a href="painel-de-controle/agro.html" class="card">
+                        <div class="front">
+                            <span>Agronegócios</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="controls">
+                <button id="prev">◀</button>
+                <button id="next">▶</button>
+            </div>
+
+            <script src="adm-inicial.js"></script>
 </body>
 </html>
