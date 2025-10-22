@@ -82,14 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
       fecharModal();
     }
   });
-  
-
-  
-
-  formTraz.addEventListener('submit', (e) => {
-    e.preventDefault();
-    fecharModal();
-  });
 
   const btnEscola = document.querySelector('.btn-trocar-escola');
   const menuEscola = document.getElementById('opcoes-escola');
@@ -151,17 +143,45 @@ const notificacaoCard = document.getElementById("notification-card");
 
 form.addEventListener("submit", function (event) {
    event.preventDefault();
-
-   notificacaoCard.style.display = "block";
-
-   setTimeout(() => {
-      notificacaoCard.classList.add('show');
-   }, 10);
-   setTimeout(() => {
-      notificacaoCard.classList.remove('show');
-   }, 3000);
-
-   form.reset();
+   
+   // Coletar dados do formulário
+   let dados = {};
+   let formData = new FormData(form);
+   
+   formData.forEach((value, key) => {
+     dados[key] = value;
+   });
+   
+   // Enviar para a API
+   fetch('http://localhost:3001/api/formulario', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify(dados)
+   })
+   .then(res => res.json())
+   .then(data => {
+     console.log('Dados enviados com sucesso:', data);
+     
+     // Mostrar alerta de sucesso
+     alert('✅ Formulário enviado com sucesso!');
+     
+     // Mostrar notificação de sucesso
+     if (notificacaoCard) {
+       notificacaoCard.style.display = "block";
+       setTimeout(() => {
+          notificacaoCard.classList.add('show');
+       }, 10);
+       setTimeout(() => {
+          notificacaoCard.classList.remove('show');
+       }, 3000);
+     }
+     
+     form.reset();
+   })
+   .catch(error => {
+     console.error('Erro ao enviar:', error);
+     alert('❌ Erro ao enviar formulário! Verifique sua conexão e tente novamente.');
+   });
 });
 
   function formatoTelefone(telefone) {

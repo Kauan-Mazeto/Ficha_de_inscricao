@@ -84,15 +84,15 @@
                     <h2 id="form-titulo"></h2>
                     <form  method="post">
                         <label for="curso">Curso de Interesse</label>
-                        <input type="text" id="curso-input">
+                        <input type="text" id="curso-input" name="curso">
                         <label for="nome">Nome</label>
-                        <input type="text" required id="nome">
+                        <input type="text" required id="nome" name="nome_candidato">
                         <label for="email">Email</label>
                         <input type="email" required id="email form-email" name="email">
                         <label for="telefone">Telefone</label>
-                        <input type="tel" required id="telefone">
+                        <input type="tel" required id="telefone" name="telefone">
                         <label for="data">Data de Nascimento</label>
-                        <input type="date" required id="data">
+                        <input type="date" required id="data" name="data_nascimento">
                         <label for="rg">RG</label>
                         <input type="text" id="rg" name="rg" maxlength="12" required>
                         <label for="cpf">CPF</label>
@@ -105,9 +105,9 @@
                     <h2>Informações Adicionais</h2>
                     <form>
                         <label for="endereco">Endereço</label>
-                        <input type="search" id="endereco" required>
+                        <input type="search" id="endereco" name="endereco" required>
                         <label for="bairro">Bairro</label>
-                        <input type="text" id="bairro" required>
+                        <input type="text" id="bairro" name="bairro" required>
                         <label for="cidade">Cidade</label>
                         <input type="text" id="cidade" name="cidade" list="lista-cidades" required autocomplete="on">
                         <datalist id="lista-cidades">
@@ -123,12 +123,12 @@
                             <option value="Umuarama">
                         </datalist>
                         <label for="estado">UF</label>
-                        <input type="text" id="estado" maxlength="2" required>
+                        <input type="text" id="estado" name="estado" maxlength="2" required>
                         <label for="assinatura" class="input-label">Assinatura</label>
-                        <input type="file" id="assinatura" class="input-file">
+                        <input type="file" id="assinatura" name="assinatura" class="input-file">
 
                         <label>
-                            <input type="checkbox" id="Declaro" required >
+                            <input type="checkbox" id="Declaro" name="declaro" required >
                             <span>Declaro verdadeiras as informações acima e estar ciente que, em caso de classificação para o curso e efetivação de matrícula, o não comparecimento nas aulas nos primeiros (05) cinco dias úteis do início do curso implicará na exclusão automática da matrícula sendo necessário participar de novo processo seletivo para ingresso no curso pretendido.</span>
                         </label>
 
